@@ -87,11 +87,11 @@ class FormularioProdutoActivity : UsuarioBaseActivity() {
 
         botaoSalvar.setOnClickListener {
             lifecycleScope.launch {
-                    val produtoNovo = criaProduto()
-                    if (produtoNovo.valorEhValido) {
-                        ProdutoRepository(produtoDao).salva(produtoNovo)
-                        finish()
-                    }
+                val produtoNovo = criaProduto()
+                if (produtoNovo.valorEhValido) {
+                    ProdutoRepository(produtoDao).salva(produtoNovo)
+                    finish()
+                }
             }
         }
     }
